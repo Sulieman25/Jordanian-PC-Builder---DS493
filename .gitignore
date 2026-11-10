@@ -1,0 +1,11 @@
+*.safetensors
+*.bin
+*.pt
+*.h5
+*.msgpack
+checkpoint-*/
+runs/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
