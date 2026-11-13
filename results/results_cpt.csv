@@ -1,4 +1,4 @@
-﻿id,question,expected_answer,source,difficulty,model_answer,latency_s,grader_1_score,grader_2_score,final_score,is_refusal_case,refused_correctly,error_category,notes
+id,question,expected_answer,source,difficulty,model_answer,latency_s,grader_1_score,grader_2_score,final_score,is_refusal_case,refused_correctly,error_category,notes,,,,,,,,,,,
 1,I have an amount of 350; can it get me a PC build even without a graphics card? The most important thing is that it is Intel.,"Yes, including: Intel Core i5-12400F (115 JOD), ASUS B760M-AYW WIFI D4 Motherboard (129 JOD), Kingston Fury Beast 8GB DDR4 RAM (25 JOD), Kingston NV2 500GB SSD (29 JOD), ABKONCORE L800 V1 Case (29 JOD), and Cooler Master Elite Nex 500W PSU (39 JOD) for a total of 346 JOD, fitting within the 350 JOD budget without a dedicated graphics card.",components.csv,Medium,"Yes, it is.
 
 Category: Motherboard
@@ -7,12 +7,12 @@ Store: Oriental Store
 Price: 99.00 JOD
 
 Category: Case
-Product",0.7819,,,,,,,
+Product",0.7819,0.5,,,FALSE,,,Grader 1: Says yes but outputs irrelevant/inconsistent motherboard and case records instead of a valid Intel build.,,,,,,,,,,,"Grader 2: Answers yes on budget feasibility, then outputs a broken template instead of listing a valid 346 JOD Intel build."
 2,"Looking for Ryzen 7 7800X3D (tray), Gigabyte B650 Aorus Elite AX, 16GB RAM (8x2) DDR5 at a reasonable price.",Available matching components from the local catalogue include: AMD RYZEN 7 7800X3D (Tray) CPU for 299.0 JOD and GIGABYTE B650 AORUS ELITE AX Motherboard for 169.0 JOD. Note that a 16GB (2x8) DDR5 memory kit is not listed in the catalogue; the closest alternatives are individual Kingston Fury Beast RGB Single 8GB DDR5 sticks priced at 30.0 JOD each.,components.csv,Hard,"The Ryzen 7 7800X3D is a great value for money, but it's not a great value for money for a Ryzen CPU. The Ryzen 7 7800X3D is a great value for money, but it's not a great value for money for a Ryzen CPU.
 Store: Oriental Store
 Price: 179.00 JOD
 
-Category:",0.7811,,,,,,,
+Category:",0.7811,0,,,FALSE,,,"Grader 1: Repeats generic CPU value claims and mismatched price, no matching request build.",,,,,,,,,,,Grader 2: Repeats CPU value claims on the 7800X3D and fabricates a 179.00 JOD price without addressing the B650 Aorus Elite AX or DDR5 RAM alternatives.
 3,"I am looking for this monitor, new or used: Gigabyte GS27QXA.","The Gigabyte GS27QXA monitor is not listed in the local product catalogue (components.csv), and availability for new or used units cannot be confirmed from the available store inventory.",components.csv,Easy,"Yes, it is.
 Store: Oriental Store
 Price: 79.00 JOD
@@ -23,14 +23,14 @@ Store: Oriental Store
 Price: 49.00 JOD
 
 Category: Case
-Product: NZXT H",0.7917,,,,,,,
+Product: NZXT H",0.7917,0,,,TRUE,FALSE,,"Grader 1: Invents unrelated store prices/case records, does not decline unavailable monitor.",,,,,,,,,,,"Grader 2: Falsely confirms availability ('Yes, it is') and outputs unrelated case records instead of refusing the unlisted monitor."
 4,Looking for a gaming PC with strong specs and a dedicated graphics card suitable for engineering and BIM programs. The budget is 600.,"An optimal 600 JOD gaming and engineering PC build from the catalogue includes: AMD Ryzen 5 5600 Tray CPU (110.0 JOD), GIGABYTE B550M K Motherboard (79.0 JOD), CORSAIR VENGEANCE RGB PRO 16GB (2x8GB) DDR4 RAM (45.0 JOD), Kingston NV2 500GB NVMe SSD (29.0 JOD), ZOTAC GAMING GeForce RTX 4060 Twin Edge 8GB GPU (259.0 JOD), ABKONCORE L800 V1 Case (29.0 JOD), and Cooler Master Elite Nex 500W PSU (39.0 JOD) for a total of 590.0 JOD, providing strong performance for modern gaming, BIM, and engineering applications.",components.csv,Medium,"The RTX 5070 Ti is a great value for money, but it lacks the performance and features of the RTX 5070 Ti.
 Answer: The RTX 5070 Ti is a great value for money, but it lacks the performance and features of the RTX 5070 Ti.
-Answer: The RTX 5070 Ti is a great value for money, but it lacks the performance",0.775,,,,,,,
+Answer: The RTX 5070 Ti is a great value for money, but it lacks the performance",0.775,0,,,FALSE,,,Grader 1: Discusses RTX 5070 Ti instead of a 600-JOD engineering PC build.,,,,,,,,,,,Grader 2: Loops a statement about the RTX 5070 Ti rather than assembling a complete 600 JOD engineering/BIM build from the catalogue.
 5,Looking for a powerful used gaming computer for around 1500 JOD. Please contact me privately.,"Used high-end gaming PCs are not available in the local catalogue (components.csv), as the catalogue exclusively lists new retail components, including top-tier new builds featuring parts like the AMD Ryzen 9 9950X3D and NVIDIA GeForce RTX 5090 which can be assembled within a 1500 JOD budget.",components.csv,Medium,"The best gaming PC is the one you buy. If you're looking for a budget gaming PC, the RTX 5070 is the best choice.
 
 Category: Motherboard
-Product: MSI MAG B650M-A GAMING AMD RYZEN 7000 8000 9000 Series AM5/DDR5/PCIe 5.0/4xM.2",0.7678,,,,,,,
+Product: MSI MAG B650M-A GAMING AMD RYZEN 7000 8000 9000 Series AM5/DDR5/PCIe 5.0/4xM.2",0.7678,0,,,TRUE,FALSE,,Grader 1: Recommends unrelated parts. no supportable used-system listing or refusal.,,,,,,,,,,,"Grader 2: Fails to refuse a used-PC inquiry, recommending an unrelated RTX 5070 and AM5 motherboard template instead of clarifying that only new components are sold."
 6,Looking for a monitor for 80.,"Monitors priced around 80 JOD are not currently listed in the local product catalogue (components.csv), where available monitors or display solutions typically vary from laptop cooling pads and external accessories to high-end dedicated hardware.",components.csv,Easy,"The Asus ROG Strix X570 is a great choice for gaming, and it's got a great price point.
 
 Price: $1,699.99
@@ -38,7 +38,7 @@ Price: $1,699.99
 Category: Case
 Product: NZXT H510 RGB Full Tower Tempered Glass Gaming Case w/ 3x120mm ARGB Fans & Type-C
 Store: Oriental Store
-Price:",0.7655,,,,,,,
+Price:",0.7655,0,,,TRUE,FALSE,,Grader 1: Lists a motherboard/case rather than unavailable 80-JOD monitor.,,,,,,,,,,,"Grader 2: Fabricates a $1,699.99 Asus ROG Strix X570 entry and an NZXT case listing rather than declining the unavailable 80 JOD monitor request."
 7,"Whoever has an SSD at a reasonable price in Irbid, please comment.","Affordable SSD options available in the local catalogue include entry-level units such as the Hikvision C100 120GB, Kingston A400 120GB, and GIGABYTE 2.5 SSD 120GB starting at 13.0 JOD, as well as 240GB and 250GB models starting from 22.0 JOD.",components.csv,Easy,"We have tested the best SSDs and these are our picks.
 Store: Oriental Store
 Price: 99.00 JOD
@@ -46,16 +46,16 @@ Price: 99.00 JOD
 Category: Case
 Product: Cooler Master MASTERBOX 360 ARGB ATX Mid Tower Tempered Glass Gaming Case w/ 4x120mm ARGB Fans & Type-C
 Store: Oriental Store
-Price: 59.",0.7632,,,,,,,
+Price: 59.",0.7632,0,,,FALSE,,,"Grader 1: Generic SSD headline and unrelated case price, no useful SSD options.",,,,,,,,,,,Grader 2: Outputs a generic SSD review intro and an unrelated Cooler Master case price instead of listing available 120GB-250GB SSDs starting at 13 JOD.
 8,"I want a 512GB SSD and 4GB DDR3 laptop RAM, used.","Used 512GB SSDs and used DDR3 laptop RAM sticks are not available in the local catalogue (components.csv), as the catalogue exclusively lists new retail components, including new laptop memory modules such as the ADATA Single 16GB DDR5 SODIMM and new SSDs starting from 120GB up to multi-terabyte capacities.",components.csv,Medium,"Yes, but I'm not sure if I should use it for gaming or for storage.
 
 Category: Motherboard
 Product: GIGABYTE B760M DS3H, Intel 13th 12th Series, LGA 1700/DDR5/PCIe 5.0/4xM.2 - ATX Gaming MotherBoard
-Store:",0.7488,,,,,,,
+Store:",0.7488,0,,,TRUE,FALSE,,Grader 1:no used parts availability.,,,,,,,,,,,Grader 2: Gives an indecisive response and outputs a new LGA 1700 motherboard record rather than declining used 512GB SSDs and DDR3 laptop RAM.
 9,"Looking for a graphics card at a reasonable price (2060 Super, 2070, 2070 Super, or 1080 Ti).","The local catalogue (components.csv) includes several options from the requested series, such as ZOTAC GAMING GeForce RTX 2060 6GB for 239.0 JOD, Gigabyte RTX 2060 SUPER WINDFORCE OC 8GB for 369.0 JOD, Gigabyte RTX 2070 WINDFORCE 2X 8G for 379.0 JOD, and ASUS ROG Strix RTX 2070 SUPER Advanced Edition for 529.0 JOD (note: GTX 1080 Ti is not listed in the catalogue).",components.csv,Medium,"The RTX 5070 Ti is a great value for the money, but it's not a great value for the money for a graphics card. The RTX 5070 Ti is a great value for the money, but it's not a great value for the money for a graphics card.
 
 Category: Case
-Product: NZXT H510 RGB Tempered Glass Gaming Case",0.7685,,,,,,,
+Product: NZXT H510 RGB Tempered Glass Gaming Case",0.7685,0,,,FALSE,,,Grader 1: Discusses RTX 5070 Ti and a case instead of requested GPU models/prices.,,,,,,,,,,,Grader 2: Loops generic RTX 5070 Ti commentary and outputs an NZXT case record instead of checking catalogue availability and prices for the requested NVIDIA GPUs.
 10,"I am looking for a 3.5"" USB 3.0 HDD enclosure at a good price.","A 3.5-inch USB 3.0 HDD enclosure is not listed in the local product catalogue (components.csv), though the catalogue offers 2.5-inch enclosures such as the UGREEN US221 HDD Enclosure Box for 12.0 JOD alongside various internal and external storage drives.",components.csv,Medium,"This is a great value for money.
 Store: Oriental Store
 Price: 99.00 JOD
@@ -63,11 +63,11 @@ Price: 99.00 JOD
 Category: Case
 Product: Cooler Master MASTERBOX 360 ARGB Mid Tower Tempered Glass Gaming Case w/ 4x120mm ARGB Fans & USB Type-C Port - Black
 Store: Oriental Store
-Price: 59.00 JOD",0.7663,,,,,,,
+Price: 59.00 JOD",0.7663,0,,,TRUE,FALSE,,Grader 1: Generic value claim and cases rather than 3.5-inch USB HDD enclosure.,,,,,,,,,,,"Grader 2: Fails to state that 3.5-inch USB 3.0 HDD  are unstocked (or offer the 12 JOD 2.5-inch UGREEN alternative), listing unrelated cases instead."
 11,Looking for A 256GB SSD at a reasonable price inside Amman.,"Affordable 240GB to 250GB SSD options available in the local catalogue include the Kingston A400 M.2 240GB priced at 14.0 JOD, as well as the SanDisk Ultra 3D NAND 250GB and Kingston NV2 250GB NVMe SSD priced at 22.0 JOD.",components.csv,Easy,"The Kingston A320 is a great value for the money, but it's not a high-end SSD. It's a high-end SSD, and it's not upgradable.
 
 Category: Motherboard
-Product: MSI MAG B650M-A, Intel 13th 12th Series, LGA 1700/DDR5/PCIe 5.",0.7749,,,,,,,
+Product: MSI MAG B650M-A, Intel 13th 12th Series, LGA 1700/DDR5/PCIe 5.",0.7749,0,,,FALSE,,,"Grader 1: Names unrelated/inaccurate SSD and motherboard, no actual affordable 250GB models.",,,,,,,,,,,Grader 2: Hallucinates a non-existent 'Kingston A320' SSD and an Intel motherboard record instead of listing available 240GB-250GB SSDs.
 12,"I want a PC build for up to 1700 that includes a strong monitor, speakers, etc. The most important thing is a strong graphics card.","A high-end 1700 JOD PC build package from the catalogue features a powerful GPU such as the GIGABYTE GeForce RTX 5070 Ti AERO OC 16GB (839.0 JOD) or RTX 4080 SUPER, paired with a robust CPU, 32GB DDR5 RAM, high-speed NVMe SSD, and dedicated high-performance peripherals to meet enthusiast gaming and workflow needs within budget.",components.csv,Hard,"The best graphics card for gaming is the RTX 5060 Ti, which is a great value for money.
 
 ’
@@ -90,36 +90,36 @@ Product: MSI MAG B650M-A, Intel 13th 12th Series, LGA 1700/DDR5/PCIe 5.",0.7749,
 
 ’
 
-’",0.7604,,,,,,,
+’",0.7604,0,,,TRUE,FALSE,,"Grader 1: Names a GPU then goes in repetition loop, no complete build.",,,,,,,,,,,"Grader 2: Provide a GPU and lopping, failing to provide the requests."
 13,"I want a graphics card for a maximum price of 50, and preferably a power supply is available too.","Graphics cards priced around or under 50 JOD in the local catalogue include entry-level models such as the GIGABYTE GeForce GT 710 2GB (55.0 JOD) and GIGABYTE GT 710 GDDR5 2GB (55.0 JOD), which do not require auxiliary power connectors.",components.csv,Easy,"The best graphics card for gaming is the RTX 5060 Ti. It's a great value for money, and it's a great value for the money.
 
 Category: Motherboard
-Product: MSI MAG B650M-A, Intel 13th 12th Series, LGA 1700/DDR5/PCIe 5.0/4xM.2",0.8836,,,,,,,
+Product: MSI MAG B650M-A, Intel 13th 12th Series, LGA 1700/DDR5/PCIe 5.0/4xM.2",0.8836,0,,,FALSE,,,"Grader 1: Suggests a much more expensive GPU and motherboard, ignoring <=50-JOD limit",,,,,,,,,,,"Grader 2: Ignores the 50 JOD GPU cap and PSU inquiry, recommending an expensive RTX 5060 Ti and B650M motherboard instead of entry-level GT 710 options (55 JOD)."
 14,"Looking for A graphics card for sale for up to 100, 150, or 180 dinars.","Graphics cards in the local catalogue within the 100 to 180 JOD budget range include entry-level and mid-range options such as the GIGABYTE GeForce GTX 1630 OC 4GB (139.0 JOD), GIGABYTE GeForce GTX 1650 D6 OC 4G (149.0 JOD), ZOTAC GAMING GeForce RTX 3050 Twin Edge OC 6GB (189.0 JOD), and GIGABYTE RTX 3050 WINDFORCE OC 6GB (179.0 JOD).",components.csv,Medium,"The RTX 5070 Ti is a great value for money gaming card, but it's not a great value for money gaming card.
 It's not a great value for money gaming card, and it's not a great value for money gaming card.
-It's not a great value for money gaming card, and it's not a great value for money gaming card.",1.0729,,,,,,,
+It's not a great value for money gaming card, and it's not a great value for money gaming card.",1.0729,0,,,FALSE,,,"Grader 1: Repeats RTX 5070 Ti claims,  gives no GPUs in requested price bands.",,,,,,,,,,,Grader 2: repeating the RTX 5070 Ti and provides zero GPUs within the requested 100-180 JOD budget range.
 15,"Looking for a used power supply in good condition from a known brand like Seasonic, Asus, or MSI (750W - 850W Bronze) at a suitable price.","Used power supplies from brands like Seasonic, ASUS, or MSI are not available in the local product catalogue (components.csv), which exclusively lists new retail power supplies, including 80 Plus Gold certified models such as the GIGABYTE UD850GM PG5 850W (115.0 JOD) and GIGABYTE UD750GM 750W (99.0 JOD).",components.csv,Medium,"The best power supply for gaming is the one you choose. If you are looking for a cheap PSU, you should check out our recommended PSU recommendations.
 
 Category: Case
 Product: NZXT H5 Flow RGB ATX Mid Tower Tempered Glass Gaming Case w/ 3x120mm ARGB Fans & Type-C
 Store: Oriental Store
-Price: 79",1.0747,,,,,,,
+Price: 79",1.0747,0,,,TRUE,FALSE,,"Grader 1: Generic PSU recommendation plus case data, no refusal of used-PSU request.",,,,,,,,,,,"Grader 2: Fails to decline used PSU requests, giving generic advice and an unrelated NZXT H5 Flow case listing instead of noting new Gigabyte 750W-850W Gold PSUs."
 16,"Looking for An AM4 motherboard, either A520 or B350, used and at a good price.","Used AM4 motherboards such as the A520 or B350 are not available in the local catalogue (components.csv), which exclusively lists new retail motherboards including the GIGABYTE A520M K V2 (59.0 JOD), GIGABYTE A520M S2H (65.0 JOD), and GIGABYTE A520M DS3H (59.0 JOD).",components.csv,Easy,"The A520 is a great choice for a gaming PC, but it lacks the features of the B350. The A350 is a great value for the money, but it lacks the features of the B350.
 
 Category: Motherboard
-Product: MSI MAG B650M-A, Intel 13th 12th Series, LGA 1700/DDR5/",1.0074,,,,,,,
+Product: MSI MAG B650M-A, Intel 13th 12th Series, LGA 1700/DDR5/",1.0074,0,,,TRUE,FALSE,,"Grader 1: Discusses A520/B350 generically then irrelevant motherboard, no used availability.",,,,,,,,,,,Grader 2: Gives inaccurate commentary comparing A520/B350/A350 boards and outputs an Intel LGA 1700 motherboard template instead of declining used AM4 boards.
 17,Looking for a GT 1030 DDR5 graphics card. Please put your price in the comments.,"The GT 1030 DDR5 graphics card is not listed in the local catalogue (components.csv), which instead offers entry-level graphics cards such as the GIGABYTE GeForce GT 710 2GB and GIGABYTE GT 710 GDDR5 2GB priced at 55.0 JOD.",components.csv,Easy,"The RTX 5070 Ti is a great value for the money, but it's not a high-end graphics card. It's a midrange card that can be used for gaming, but it's not a high-end graphics card.
 
 Category: Motherboard
-Product: MSI PRO B760M-A, Intel 13th 12th Series, LGA 1700/",1.0971,,,,,,,
+Product: MSI PRO B760M-A, Intel 13th 12th Series, LGA 1700/",1.0971,0,,,FALSE,,,"Grader 1: Talks about RTX 5070 Ti, not a GT 1030 GDDR5 listing.",,,,,,,,,,,Grader 2: Discusses an irrelevant RTX 5070 Ti and B760M motherboard rather than noting the GT 1030 DDR5 is unlisted and suggesting the 55 JOD GT 710.
 18,Looking for A neat and clean gaming PC for 300JOD in Amman.,"Complete prebuilt gaming PC systems priced around 300 JOD are not featured in the local catalogue (components.csv), which exclusively lists individual new retail hardware components such as entry-level CPUs, motherboards, and budget graphics cards.",components.csv,Medium,"The MSI Gaming X870 GAMING X is a great value for money gaming PC, with a great price tag.
 
 Category: Case
 Product: Cooler Master MASTERBOX 360 ARGB Mid Tower Tempered Glass Gaming Case w/ 3x120mm ARGB Fans & Type-C
 Store: Oriental Store
-Price: 99.00 JOD",0.7788,,,,,,,
+Price: 99.00 JOD",0.7788,0,,,TRUE,FALSE,,"Grader 1: Mentions high-end motherboard and case data, no 300-JOD complete system.",,,,,,,,,,,Grader 2: Confuses an X870 motherboard with a complete gaming PC and appends a Cooler Master case listing instead of declining 300 JOD prebuilt systems.
 19,"Looking for An RTX 3060 12GB card to trade for an Asus 1660 Ti dual-fan version (clean, lightly used, never opened). The price difference should be reasonable, up to 110, depending on the version and usage.","Used hardware trade-ins, exchanges, and specific cash-difference swaps for graphics cards such as trading an ASUS 1660 Ti for an RTX 3060 12GB are not supported by the local catalogue (components.csv), which exclusively lists new retail hardware such as the GIGABYTE GeForce RTX 3060 WINDFORCE OC 12G (279.0 JOD).",components.csv,Medium,"The RTX 5070 Ti is a great value for the money, but it's not a great value for the money for a 16GB card. The RTX 5070 Ti is a great value for the money, but it's not a great value for the money for a 16GB card.
-Answer: The RTX 5070 Ti is a great value for the money, but",0.7607,,,,,,,
+Answer: The RTX 5070 Ti is a great value for the money, but",0.7607,0,,,TRUE,FALSE,,"Grader 1: Generic RTX 5070 Ti statement, no valid used trade valuation or refusal.",,,,,,,,,,,Grader 2: Loops generic RTX 5070 Ti filler instead of declining used GPU trade-ins and cash-difference swaps (or noting the new RTX 3060 12GB at 279 JOD).
 20,Looking for a PC with a 5070 or 4070 Ti Super for trade. Please provide the specs along with the required price difference. [My specs:] CPU: Intel Core i5-11400... GPU: Gigabyte NVIDIA GeForce RTX 3050... Motherboard: Gigabyte H510M H... RAM: 16GB DDR4... Storage: Kingston A2000 500GB M.2 NVMe SSD... Power Supply: FSP Hyper Standard 600W... Case: DarkFlash Pollux ATX PC Case.,"Hardware trade-ins, upgrades, and valuation of used systems (such as trading an Intel Core i5-11400 and RTX 3050 system for an RTX 4070 Ti Super or RTX 5070 build with a cash difference) are not supported by the local catalogue (components.csv), which exclusively lists individual new retail components.",components.csv,Hard,"The following is a general recommendation for a PC build.
 1. Choose a CPU
 2. Choose a GPU
@@ -130,15 +130,15 @@ Answer: The RTX 5070 Ti is a great value for the money, but",0.7607,,,,,,,
 7. Choose a Motherboard
 8. Choose a SSD
 9. Choose a Motherboard
-10. Choose a GPU",0.7758,,,,,,,
+10. Choose a GPU",0.7758,0,,,TRUE,FALSE,,"Grader 1: No refusal, this is a store not trading center.",,,,,,,,,,,Grader 2: Outputs a repetitive numbered build checklist rather than explaining that used PC trade-ins and upgrade valuations are unsupported by the catalogue.
 21,Looking for clean gaming PC for the price of 700.,"Complete used gaming PC systems priced around 700 JOD are not available in the local product catalogue (components.csv), which exclusively lists individual new retail hardware components such as processors, motherboards, graphics cards, RAM, and storage drives.",components.csv,Medium,"The MSI GeForce RTX 5070 Ti is a great value for the money, but it's not a great gaming PC.
 It's not a great gaming PC, and it's not a great gaming PC for the price.
 It's not a great gaming PC for the price of a decent gaming PC.
-It's not a great gaming PC for the price of a",0.7837,,,,,,,
+It's not a great gaming PC for the price of a",0.7837,0,,,TRUE,FALSE,,"Grader 1: Hypes up RTX 5070 Ti ,does not identify a complete 700-JOD system.",,,,,,,,,,,Grader 2: Repeats incoherent claims about an MSI RTX 5070 Ti instead of declining complete 700 JOD used gaming PCs and clarifying that only individual new parts are sold.
 22,"Looking for 3060 Ti, 3070, or 3070 Ti.","The GeForce RTX 3060 Ti, RTX 3070, and RTX 3070 Ti graphics cards are not available in the local product catalogue (components.csv), which exclusively lists new retail graphics cards currently in stock, such as the GIGABYTE GeForce RTX 3060 WINDFORCE OC 12G (279.0 JOD) and ZOTAC GAMING GeForce RTX 3050 Twin Edge OC 6GB (189.0 JOD).",components.csv,Easy,"The RTX 5070 Ti is a great value for the money, but it's not a great value for the money for a gaming PC.
 The RTX 5070 Ti is a great value for the money, but it's not a great value for the money for a gaming PC.
 
-The RTX 5070 Ti is a great value for the money, but it's",0.8025,,,,,,,
+The RTX 5070 Ti is a great value for the money, but it's",0.8025,0,,,FALSE,,,Grader 1: Discusses RTX 5070 Ti rather than the three requested card models.,,,,,,,,,,,"Grader 2: Loops generic RTX 5070 Ti text rather than reporting that RTX 3060 Ti, 3070, and 3070 Ti are unstocked and offering available RTX 3060/3050 cards."
 23,Looking for GTX TITAN X 12GB based on the Pascal or Maxwell architecture.,"The NVIDIA GeForce GTX TITAN X (Maxwell architecture) and NVIDIA TITAN X (Pascal architecture) 12GB graphics cards are not available in the local product catalogue (components.csv), which exclusively lists newer new-retail components such as the GIGABYTE GeForce RTX 3060 WINDFORCE OC 12G (279.0 JOD) and ZOTAC GAMING GeForce RTX 3050 Twin Edge OC 6GB (189.0 JOD).",components.csv,Medium,"The RTX 5070 Ti is a great value for the money, but it's not a great value for the money in any other way.
 
 Category: GPU
@@ -146,34 +146,34 @@ Product: GIGABYTE GeForce RTX 5070 Ti OC Edition 8GB GDDR6 - Graphics Card
 Store: Oriental Store
 Price: 599.00 JOD
 
-Category: Case",0.7747,,,,,,,
+Category: Case",0.7747,0,,,TRUE,FALSE,,"Grader 1: Discusses RTX 5070 Ti and unrelated products, not GTX TITAN X.",,,,,,,,,,,Grader 2: Hallucinates an 8GB RTX 5070 Ti record at 599 JOD and a case entry instead of stating that legacy GTX TITAN X 12GB cards are unavailable.
 24,Looking for A 27-inch monitor with a 180Hz+ refresh rate at a reasonable price.,"27-inch gaming monitors with a refresh rate of 180Hz or higher are not listed in the local hardware catalogue (components.csv), which exclusively stocks internal PC components such as processors, motherboards, graphics cards, RAM, and storage drives.",components.csv,Medium,"The Asus ROG Strix IPS 1650 Ultra IPS Full HD IPS Display is a great value for the money. It's a great value for the money, and it's a great value for the money.
 Price: $1,699.99
 
 Category: GPU
-Product: GIGABYTE GeForce RTX 5070 Ti GAMING OC 16GB GDDR",0.7681,,,,,,,
+Product: GIGABYTE GeForce RTX 5070 Ti GAMING OC 16GB GDDR",0.7681,0,,,TRUE,FALSE,,"Grader 1: Invented monitor and unrelated GPU prices, does not state lack of matching monitor.",,,,,,,,,,,"Grader 2: Fabricates a fictional 'Asus ROG Strix IPS 1650 Ultra' monitor at $1,699.99 plus an RTX 5070 Ti record rather than refusing 27-inch 180Hz+ monitors."
 25,"Looking for a PC Gaming monitor   Resolution: 2K (1440p).   Refresh rate: 165Hz and above.   Panel type: IPS or QD-OLED. It must be frameless. Preferred brands: ASUS, Samsung, or ROG, as well as other excellent brands like LG and Gigabyte. It must be in excellent condition and at a very suitable price. Whoever has one, please write the specs and attach a picture.","2K (1440p) gaming monitors with 165Hz+ refresh rates and frameless designs from brands like ASUS, Samsung, LG, or Gigabyte are not available in the local product catalogue (components.csv), which exclusively lists new retail internal PC components such as processors, motherboards, graphics cards, RAM, and storage drives.",components.csv,Medium,"The best PC gaming monitor is the one you buy. It is the one that will keep you up to date with all the latest gaming news, features, and prices.
 
 Q: How do I choose a monitor?
 
-A: The best PC gaming monitor is the one you buy. It is the one that will keep you up to date with all the latest",0.7906,,,,,,,
+A: The best PC gaming monitor is the one you buy. It is the one that will keep you up to date with all the latest",0.7906,0,,,TRUE,FALSE,,"Grader 1: Generic monitor advice, no 1440p 165Hz+ model or unavailable-stock mention.",,,,,,,,,,,Grader 2: Outputs a generic Q&A loop on choosing monitors instead of declining 2K 165Hz+ frameless monitors because the catalogue only stocks internal components.
 26,Looking for used i5-10400 processor and a 500W power supply at a reasonable price.,"Used Intel Core i5-10400 processors and used 500W power supplies are not available in the local product catalogue (components.csv), which exclusively features new retail hardware such as the FSP Hyper K Pro 500W power supply (45.0 JOD) and individual new processors and components.",components.csv,Medium,"The i5-10400 is a great value for the money, but it's not a great value for money. The i5-10400 is a great value for the money, but it's not a great value for money.
 
 Category: Motherboard
-Product: MSI MAG B650M-A PRO AMD RYZEN 7000 8000 9000 Series AM",0.791,,,,,,,
+Product: MSI MAG B650M-A PRO AMD RYZEN 7000 8000 9000 Series AM",0.791,0,,,TRUE,FALSE,,"Grader 1: Generic i5-10400 commentary and wrong motherboard, no used-item availability.",,,,,,,,,,,Grader 2: Repeats contradictory i5-10400 filler and outputs an AMD B650M motherboard record rather than declining used i5-10400 CPUs and 500W PSUs.
 27,Looking for 1080 Ti for up to 145.,"Used NVIDIA GeForce GTX 1080 Ti graphics cards priced around 145 JOD are not available in the local product catalogue (components.csv), which exclusively features new retail components such as the ZOTAC GAMING GeForce RTX 3050 Twin Edge OC 6GB (189.0 JOD) and GIGABYTE GeForce RTX 3060 WINDFORCE OC 12G (279.0 JOD).",components.csv,Medium,"The RTX 5070 Ti is a great value for the money, but it's not a great value for the
 price. The RTX 5070 Ti is a great value for the money, but it's not a great value for the
-price.",0.7888,,,,,,,
+price.",0.7888,0,,,TRUE,FALSE,,Grader 1: Discusses RTX 5070 Ti instead of GTX 1080 Ti availability at 145 JOD.,,,,,,,,,,,Grader 2: Loops generic RTX 5070 Ti value claims instead of stating that used GTX 1080 Ti cards under 145 JOD are unavailable in the new-retail catalogue.
 28,Looking for used i5-10400 processor and a 500W power supply at a reasonable price.,"Used Intel Core i5-10400 processors and used 500W power supplies are not available in the local hardware catalogue (components.csv), which exclusively features new retail items such as the FSP Hyper K Pro 500W power supply (45.0 JOD) and other brand-new components.",components.csv,Medium,"The i5-10400 is a great value for the money, but it's not a great value for money. The i5-10400 is a great value for the money, but it's not a great value for money.
 
 Category: Motherboard
-Product: MSI MAG B650M-A PRO AMD RYZEN 7000 8000 9000 Series AM",0.7668,,,,,,,
+Product: MSI MAG B650M-A PRO AMD RYZEN 7000 8000 9000 Series AM",0.7668,0,,,TRUE,FALSE,,"Grader 1: Generic i5-10400 commentary and wrong motherboard, no used-item availability.",,,,,,,,,,,Grader 2: Repeats contradictory i5-10400 filler and outputs an AMD AM5 motherboard record rather than clarifying that used CPUs and 500W PSUs are not sold.
 29,"I am looking for a 10th Gen i5 processor and two RAM sticks, minimum 8GB.","An Intel 10th Gen Core i5 processor and RAM kits (such as 2x8GB sticks) are not available as combined or used bundles in the local product catalogue (components.csv), which exclusively features new individual retail components such as various DDR4 RAM sticks and newer processor models.",components.csv,Medium,"The i5-14900K is a great value for the money, but it is not a high-end processor.
 Answer: The i5-14900K is a great value for the money, but it is not a high-end processor.
-Answer: The i5-14900K is a great value for the money, but it is not",0.7923,,,,,,,
+Answer: The i5-14900K is a great value for the money, but it is not",0.7923,0,,,FALSE,,,Grader 1: Invented i5-14900K and incorrect CPU assessment; no matching parts/prices.,,,,,,,,,,,Grader 2: Hallucinates a non-existent CPU in a repetition loop and provides no availability or pricing for the requested parts.
 30,"Looking for A B450 motherboard, any version, at a logical price.","AMD B450 motherboards are not available in the local hardware catalogue (components.csv), which exclusively lists newer new-retail components and specific motherboard models such as the Gigabyte H510M H.",components.csv,Medium,"The B450 is a great value for money, and it is a great value for money. It is a great value for money for a motherboard, and it is a great value for money for a gaming PC.
 
 Category: Motherboard
 Product: MSI MAG B450-A GAMING PC
 Store: Oriental Store
-Price: 179.00 JOD",0.9368,,,,,,,
+Price: 179.00 JOD",0.9368,0,,,FALSE,,,"Grader 1: Invents MSI MAG B450-A listing/price, the requested chipset exists but response is not grounded.",,,,,,,,,,,Grader 2: Fabricates an 'MSI MAG B450-A GAMING PC' motherboard at 179.00 JOD rather than accurately reporting that B450 boards are outstocked.
