@@ -21,9 +21,9 @@
   "sft_loss": 1.0365,
   "sft_train_pairs": 450,
   "sft_val_pairs": 50,
-  "base_avg_latency_s": 0.8344,
-  "cpt_avg_latency_s": 0.8136,
-  "sft_avg_latency_s": 0.3033,
+  "base_avg_latency_s": 0.8229,
+  "cpt_avg_latency_s": 0.823,
+  "sft_avg_latency_s": 0.3224,
   "official_test_csv_supplied": true,
   "artifacts": [
     "base_continuations.csv",
